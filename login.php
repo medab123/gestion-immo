@@ -13,8 +13,11 @@ if(isset($_GET['logout'])){
 if(isset($_SESSION['userId'])){
 	header('location: index.php');
 }else if(isset($_POST['submit'])){
-  $mail = protectedVar($_POST['mail']);
+  	$mail = protectedVar($_POST['mail']);
 	$pwd = protectedVar($_POST['pwd']);
+	if(strpos($mail,"@elephant-vert.com") == false){
+		$mail .= "@elephant-vert.com";
+	}
 	$sql = "select users.*,role.* from users,role where role.ID_role = users.ID_role and password=md5('".$pwd."') and mail='$mail'";
 	$res = mysqli_query($con,$sql);
 	if(mysqli_num_rows($res) > 0){
@@ -78,7 +81,7 @@ if(isset($_SESSION['userId'])){
 	<div class="loginForm">
 	 <form action="/action_page.php">
 	  <div class="form-group">
-	    <input type="email" class="form-control" name="mail" placeholder="Email address">
+	    <input type="text" class="form-control" name="mail" placeholder="Email address">
 	  </div>
 	  <div class="form-group">
 	    <input type="password" class="form-control" name="pwd" placeholder="Password">

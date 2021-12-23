@@ -106,30 +106,15 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-        <img class="logoInstituFrance" src="img/LOGO-EV_FR.png" style="width:130px;margin-top:45px" />
+      <img class="logoInstituFrance" src="img/LOGO-EV_FR.png" style="width:130px;margin-top:45px" />
       <!-- Left links -->
       <ul   class="navbar-nav me-auto mb-2 mb-lg-0">
-        <div  class="btn-group">
-          <button  style="background: #32CD32;"  type="button" class="btn btn-primary dropdown-toggle" data-mdb-toggle="dropdown" aria-expanded="false" > inventaire </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="addDevice.php">Ajouter un Bien</a></li>
-            <li><a class="dropdown-item" href="showDevices.php">Afficher un Bien</a></li>
-          </ul>
-        </div>
-        <div class="btn-group" >
-          <button  style="background: #32CD32;"  type="button" class="btn btn-primary dropdown-toggle" data-mdb-toggle="dropdown" aria-expanded="false"> utilisateur </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="addUser.php">Ajouter un Utilisateur</a></li>
-            <li><a class="dropdown-item" href="showUsers.php">Afficher les Utilisateur</a></li>
-          </ul>
-        </div>
-        
-        <!---<li class="nav-item">
-          <a class="nav-link" href="#">Projects</a>
-        </li>---->
+        <li><a class="btn btn-success mr-2" href="showDevices.php">Bien</a></li>
+        <li><a class="btn btn-success" href="showUsers.php">Utilisateur</a></li>
       </ul>
-      <!-- Left links -->
     </div>
+      <!-- Left links -->
+  
     <!-- Collapsible wrapper -->
 
     <!-- Right elements -->

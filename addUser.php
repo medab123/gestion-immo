@@ -56,12 +56,12 @@ echo $result;
 
 ?>
 <form  method="POST" target="content" action="addUser.php"  id="form">
-	<div class="form-row">
-		<div class="form-group col-md-2">
-		  <label for="inputState">Role</label>
-		  <select   name="role" id="inputState" class="form-control" required >
-		    <option selected>choisir...</option>
-		     <?php
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="inputState">Role</label>
+      <select   name="role" id="inputState" class="form-control" required >
+        <option selected>choisir...</option>
+         <?php
 
         $sql = "SELECT * from role ";
         $rst = mysqli_query($con,$sql);
@@ -73,7 +73,7 @@ echo $result;
       ?>
     </select>
 </div>
-	</div>
+  </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Nom</label>
@@ -85,24 +85,24 @@ echo $result;
     </div>
   </div>
   <div class="form-row">
-	  <div class="form-group col-md-12">
-	    <label for="inputAddress">E-mail</label>
-	    <input type="email" name="email" class="form-control" id="inputAddress" placeholder="e-mail" required>
-	  </div>
-	  <div class="form-group col-md-6">
-	    <label for="inputAddress2">Mot de passe</label>
-	    <input type="password" name="pas1" class="form-control" id="inputAddress2" placeholder="mot de passe" required>
-	  </div>
-	  <div class="form-group col-md-6">
-	    <label for="inputAddress2">Confirmer le Mot de passe</label>
-	    <input type="password" name="pas2" class="form-control" id="inputAddress2" placeholder="Confirmer le Mot de passe" required>
-	  </div>
+    <div class="form-group col-md-12">
+      <label for="inputAddress">E-mail</label>
+      <input type="email" name="email" class="form-control" id="inputAddress" placeholder="e-mail" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputAddress2">Mot de passe</label>
+      <input type="password" name="pas1" class="form-control" id="inputAddress2" placeholder="mot de passe" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputAddress2">Confirmer le Mot de passe</label>
+      <input type="password" name="pas2" class="form-control" id="inputAddress2" placeholder="Confirmer le Mot de passe" required>
+    </div>
   </div>
   <div class="form-row">
-	  <div class="col-md-6 offset-md-3">
-	  	<button type="submit" class="btn btn-primary col align-self-center" style="background:#228B22  ;margin: 0 auto;">Enregistrer</button>
-	  </div>
-	</div>
+    <div class="col-md-6 offset-md-3">
+      <button type="submit" class="btn btn-primary col align-self-center" style="background:#228B22  ;margin: 0 auto;">Enregistrer</button>
+    </div>
+  </div>
 </form>
 
 
