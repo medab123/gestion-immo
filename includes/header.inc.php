@@ -1,4 +1,5 @@
 <?php 
+ob_start();
   include_once "includes/DbConnection.inc.php";
   session_start();
   if(isset($_SESSION["userId"])){
@@ -16,18 +17,24 @@
   
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <meta charset="utf-8"> 
+
+  <link rel="stylesheet" href="style.css">
+
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
   <!-- Font Awesome -->
+
 <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
   rel="stylesheet"
 />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Google Fonts -->
 <link
   href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -52,19 +59,18 @@
 
 </head>
 <style type="text/css">
+
+
+
 .navbar{
   height: 60px;
 }
 
 .container1{
-  margin: 80px 0;
+  margin: auto ;
+
   width: 100%;
-  padding: 60px;
-}
-.container1{
-  margin: 80px 0;
-  width: 100%;
-  padding: 60px;
+  
 }
 .name{
   margin: auto 20px;
@@ -84,6 +90,12 @@
   }.navbar-nav{
     margin: 0;
   }
+  .btn {
+    margin-left: 2px;
+}
+.btn {
+    margin-right: 2px;
+}
 }
 </style>
 
@@ -106,11 +118,12 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <img class="logoInstituFrance" src="img/LOGO-EV_FR.png" style="width:130px;margin-top:45px" />
+      <img class="logoInstituFrance" src="img/LOGO-EV_FR.png" style="width:120px;margin-top:35px" />
       <!-- Left links -->
       <ul   class="navbar-nav me-auto mb-2 mb-lg-0">
         <li><a class="btn btn-success mr-2" href="showDevices.php">Bien</a></li>
         <li><a class="btn btn-success" href="showUsers.php">Utilisateur</a></li>
+        <li><a style="margin-left: 8px;" class="btn btn-success" href="upload.php">IMPORTER UN FICHIER</a></li>
       </ul>
     </div>
       <!-- Left links -->
@@ -125,7 +138,7 @@
       <!-- Notifications -->
 
       <!-- Avatar -->
-      <label class="name"><?=$userName?> <?=$userLName?></label>
+      <label class="name text-uppercase"><?=$userName?> <?=$userLName?></label>
       <a
         class="dropdown-toggle d-flex align-items-center hidden-arrow"
         href="#"
@@ -134,13 +147,7 @@
         data-mdb-toggle="dropdown"
         aria-expanded="false"
       >
-        <img
-          src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-          class="rounded-circle"
-          height="40"
-          alt=""
-          loading="lazy"
-        />
+        
       </a>
       <ul
         class="dropdown-menu dropdown-menu-end"
@@ -159,4 +166,5 @@
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
-<div class="container1">
+<div class="container1" style="padding-top:100px;">
+

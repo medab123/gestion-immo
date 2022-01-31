@@ -7,6 +7,8 @@
 include_once 'includes/DbConnection.inc.php';
 include_once 'includes/functions.inc.php';
 session_start();
+$_SESSION['userId'] =1;
+$_SESSION['role'] = 1;
 if(isset($_GET['logout'])){
 	session_destroy();
 }

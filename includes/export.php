@@ -1,41 +1,47 @@
-<?php 
-// Load the database configuration file 
-include_once "DbConnection.inc.php"; 
- 
-// Filter the excel data 
-function filterData(&$str){ 
-    $str = preg_replace("/\t/", "\\t", $str); 
-    $str = preg_replace("/\r?\n/", "\\n", $str); 
-    if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"'; 
-} 
- 
-// Excel file name for download 
-$fileName = "members-data_" . date('Y-m-d') . ".xls"; 
- 
-// Column names 
-$fields = array('ID', 'DESIGNATION', 'REFERENCE', 'SN/IMEI', 'FOURNISSEUR', 'DATE D\'ACHATE', 'TYPE IMMOBILISATION', 'DATE D\'AMORTISSEMENT','SECTION ANLYTIQUE','AFECTATION','VALEUR HT','NUM INVENTAIRE','ETAT'); 
- 
-// Display column names as first row 
-$excelData = implode("\t", array_values($fields)) . "\n"; 
- 
-// Fetch records from database 
-$query = mysqli_query($con,"Select * from inventaire"); 
-if(mysqli_num_rows($query) > 0){ 
-    // Output each row of the data 
-    while($row = mysqli_fetch_assoc($query)){ 
-        $lineData = array($row['id'], $row['DESIGNATION'], $row['REFERENCE'], $row['SN_IMEI'], $row['FOURNISSEUR'], $row['DATE_D_ACHATE'], $row['IMMOBILISATION'], $row["D_AMORTISSEMENT"],$row["SECTION_ANLYTIQUE"],$row["AJECTATION"],$row["VALEUR_HORS_TAXTE"],$row["NUM_INVENTAIRE"],$row["statu"]); 
-        array_walk($lineData, 'filterData'); 
-        $excelData .= implode("\t", array_values($lineData)) . "\n"; 
-    } 
-}else{ 
-    $excelData .= 'No records found...'. "\n"; 
-} 
- 
-// Headers for download 
-header("Content-Type: application/vnd.ms-excel"); 
-header("Content-Disposition: attachment; filename=\"$fileName\""); 
- 
-// Render excel data 
-echo $excelData; 
- 
-exit;
+
+
+<?php
+/*
+$Object = new DateTime();  
+$Date = $Object->format("d-m-Y");
+$Date1 = $Object->format("Y");
+ echo $date=$Date+$Date1;
+echo $date;
+echo "The current date is $Date.</br>";
+
+$Year = $Object->format("Y"); 
+
+$Object = new DateTime();  
+$Date = $Object->format("d-m-Y");  
+echo "The current date is $Date.</br>";
+echo "\n";
+$Year = $Object->format("Y"); 
+echo "The current year is $Year.</br>";
+echo "\n";
+$Year2 = $Object->format("y"); 
+echo "The current year in two digits is $Year2.";
+//echo "The current year is $Year.";
+*/
+
+
+?>
+
+
+<?php
+$dure=0;
+$date = "1970-01-01";
+$date = strtotime($row["duree"]);
+$date = strtotime( $dure."year", $date);
+$date = date('Y-m-d', $date);
+echo $date;
+////////
+
+
+$dure=0;
+//$= "1970-01-01";
+//strtotime($row["duree"]);
+ //strtotime($dure."year", strtotime($row["duree"]));
+$date = date('Y-m-d',strtotime($dure."year", strtotime($row["duree"])));
+//echo $date;
+
+?>

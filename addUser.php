@@ -30,6 +30,7 @@ if ( $_POST['pas1'] != $_POST['pas2'] )
        
 $result='<div class="alert alert-danger">Les deux mots de passes sont differents .Re-essayer de nouveau</div>';
 echo $result;
+
      
 }
 ////////////////////
